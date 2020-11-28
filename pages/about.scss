@@ -1,0 +1,76 @@
+.about{
+    position: relative;
+    margin-top: -20rem;
+    background-color: $color-grey;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+    z-index: 4;
+
+    h2{
+        padding-top: 21rem;
+    }
+    .row{ 
+        padding-left: 4rem;
+        padding-bottom: 20rem;
+    }
+
+    .image_comp{
+        position: relative;
+        
+        .image{
+            width: 35rem;
+            transition: all .2s ease-out;
+            box-shadow: 0px 5px 4px $def-shadow;
+
+            //MIXIN
+            @include response(smalldisplay1){
+                width: 30rem;
+            }
+            @include response(smalldisplay4){
+                width: 25rem;
+            }
+
+            &:hover{
+                outline: 1rem solid $color-secondary;
+                outline-offset: 1.5rem;
+                z-index: 10;
+                transform: scale(1.1);
+            }
+        }
+
+        #goa{
+            position: absolute;
+            top: 0;
+            left:0;
+            z-index: 3;
+        }
+
+        #usa{
+            position: absolute;
+            top: -4rem;
+            left: 18rem;
+
+            //MEDIA
+            @include response(smalldisplay4){
+                left: 14rem;
+            }
+        }
+
+        #japan{
+            position: absolute;
+            top: 15rem;
+            left: 5rem;
+
+            //MEDIA
+            @include response(smalldisplay4){
+                top: 12rem;
+            }
+        }
+    }
+
+    .btn-blue{
+        position: absolute;
+        bottom: 8%;
+        transform: translate(-50%,-50%);
+    }
+}
+

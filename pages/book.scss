@@ -1,0 +1,103 @@
+
+.book{
+    position: relative;
+    background-color: $color-primary;
+    height: 95vh;
+    
+    //CONTAINER FOR ALL
+    &-contain{
+        @include fullCenter; 
+        height: 40rem;
+        width: 80%;
+        background-image: linear-gradient(105deg,rgba(255, 255, 255, 0.8) 0%,rgba(255, 255, 255, 0.8) 50%,transparent 50%),url('../assets/back-6.jpg');
+        background-size: cover;
+
+        //MEDIA
+        @include response(smalldisplay4){
+            background-image: linear-gradient(105deg,rgba(255, 255, 255, 0.8) 0%,rgba(255, 255, 255, 0.8) 60%,transparent 60%),url('../assets/back-6.jpg');
+        }
+    }
+
+    //FULL FORM
+    &-form{
+        position: absolute;
+        left: 5%;
+        top: 50%;
+        transform: translateY(-50%);
+
+        .btn-blue{
+            margin-top: 2.5rem;
+        }
+
+        //GRP FOR NAME AND EMAIL INPUT
+        &-grp{
+            margin-bottom: 1.5rem;
+        }
+        &-label{
+            display: block;
+        }
+
+        //TEXT INPUT
+        &-input{
+            display: block;
+            padding: 1rem 1.5rem;
+        }
+
+        &-input:focus{
+            outline: none;
+            border-bottom: 2px solid $color-primary;
+        }
+
+        &-input:invalid{
+            border-bottom: 2px solid red;
+        }
+
+        //TO HIDE THE LABEL
+        &-input:placeholder-shown ~ &-label{
+            opacity: 0;
+        }
+
+        //RADIO BTNS
+        &-radio{
+            display: inline-block;
+            margin-right: 1rem;
+
+            .radio-btn{
+                //HIDING ORIGINAL
+                display: none;
+                
+            }
+
+            //NEW RADIO BTN
+            .radio-btn-new{
+                display: inline-block; //REQUIRED
+                position: relative;
+                height: 2rem;
+                width: 2rem;
+                border-radius: 50%;
+                border: 4px solid $color-primary;
+                transform: translateY(.8rem);
+
+                //INNER CIRCLE
+                &::after{
+                    content: '';
+                    display: block;
+                    height: 1.3rem;
+                    width: 1.3rem;
+                    @include fullCenter;
+                    border-radius: 50%;
+                    background-color: $color-primary;
+                    opacity: 0;
+                }
+
+            }
+        }
+    }
+}
+
+
+//CHECKED BTN OPERATION HERE
+.radio-btn:checked ~ .radio-label .radio-btn-new::after{
+    opacity: 1;
+}
+

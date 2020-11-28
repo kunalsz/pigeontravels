@@ -1,0 +1,68 @@
+.foot{
+    background-color: rgb(65, 60, 60);
+
+    h2{
+        font-size: 4rem;
+        color: white;
+    }
+    &-logo{
+        margin-top: 1.5rem;
+        width: 20rem;
+
+        //MEDIA
+        @include response(smalldisplay4){
+            width: 16rem;
+        }
+    }
+    &-link{
+        li{
+            list-style: none;
+            display: inline-block;
+            &:not(:last-child){
+                padding-right: 1.5rem;
+            }
+            &:hover{
+                transform: skewY(-6deg);
+            }
+
+            //MEDIA
+            @include response(smalldisplay4){
+                &:not(:last-child){
+                    padding-right: 1rem;
+                }
+            }
+        }
+        a{
+            text-decoration: none;
+            color: white;
+            font-size: 1.8rem;
+            &:hover{
+                color: $color-secondary;
+            }
+
+            //MEDIA
+            @include response(smalldisplay3){
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    .copy{
+        font-size: 2rem;
+        color: white;
+
+        a{
+            color: red;
+            text-decoration: none;
+        }
+
+        //MEDIA
+        @include response(smalldisplay4){
+            font-size: 1.8rem;
+        }
+    }
+
+    .row{
+        padding-bottom: 3rem;
+    }
+}

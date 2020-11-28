@@ -1,0 +1,12 @@
+html{
+    font-size: 10px;
+}
+
+body{
+    padding: 2rem;
+}
+
+::selection{
+    background-color: $color-secondary;
+}
+

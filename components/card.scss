@@ -1,0 +1,66 @@
+
+//MAIN CARD
+.card{
+    position: relative;
+    height: 50rem;
+    @include clearfix;
+    //FRONT SIDE
+    &-side-front{
+        background-color: $color-grey;
+        width: 100%;
+        height: 100%;
+        perspective: 150;
+        transition: all .4s ease-in;
+        backface-visibility: hidden;
+        &-back{
+            //THE BACKGROUND IMAGE
+            width: 100%;
+            height: 40%;   
+            background-size: cover;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+
+            &-usa{
+                background-image: $secondary-gradient,url('../assets/place-usa.jpg');
+            }
+            &-japan{
+                background-image: $main-gradient,url('../assets/place-japan.jpg');
+            }
+            &-goa{
+                background-image: $tertiary-gradient,url('../assets/place-goa.jpg');
+            }
+        }
+    }
+    //BACK SIDE
+    &-side-back{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        perspective: 150;
+        transition: all .4s ease-in;
+
+        transform: rotateY(180deg);
+        backface-visibility: hidden;
+
+        &-usa{
+            background-image: $secondary-gradient;
+        }
+        &-japan{
+            background-image: $main-gradient;
+        }
+        &-goa{
+            background-image: $tertiary-gradient;
+        }
+    }
+   
+
+    &:hover{
+        .card-side-front{
+            transform: rotateY(-180deg);
+        }
+        .card-side-back{
+            transform: rotateY(0);
+        }
+    }
+}

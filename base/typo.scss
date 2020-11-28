@@ -1,0 +1,215 @@
+//-------------------HEADINGS-------------------
+.contain{
+    @include fullCenter;
+    top: 40%;
+    text-align: center;
+}
+
+.headings{
+    margin-bottom: 6rem;
+}
+
+// --------------------FRONT PAGE---------------------
+.heading-big{
+    font-size: 7rem;
+    letter-spacing: .2rem;
+    animation: moveRight 1s ease-in;
+}
+
+.heading-small{
+    font-size: 3rem;
+    letter-spacing: 2rem;
+    word-spacing: 1.2rem;
+    animation: moveLeft 1s ease-in;
+}
+
+//---------------SEPERATING THEM-----------------
+.block-head{
+    display: block;
+}
+
+
+//------------------- ABOUT PAGE----------------------
+.head-about{
+    display: inline-block;
+    font-size: 5rem;
+    background-image: $main-gradient;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+.def{
+    &-heading{
+        font-size: 2rem;
+        color: $color-primary;
+    }
+    &-para{
+        font-size: 1.4rem;
+    }
+}
+
+//-------------SERVICES PAGE-----------------
+
+.head-services{
+    display: inline-block;
+    font-size: 5rem;
+    color: white;
+}
+
+//--------------------TOURS PAGE-------------------
+
+.head-tours{
+    display: inline-block;
+    font-size: 5rem;
+    background-image: $main-gradient;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+    font-size: 4rem;
+}
+
+.card{
+    &-side-front{
+        &-back-text{
+            display: inline-block;
+            
+            font-size: 3rem;
+            font-weight: 800;
+            color: white;
+
+            &-usa{
+                background-image: $secondary-gradient;
+            }
+            &-japan{
+                background-image: $main-gradient;
+            }
+            &-goa{
+                background-image: $tertiary-gradient;
+            }
+        }
+
+        &-text{
+            .def-para{
+                font-size: 1.6rem;
+                &:not(:last-child){
+                    display:block;
+                    padding-bottom: .5rem;
+                    border-bottom: 3px $color-grey-light solid;
+                }
+            }
+        }
+    }
+
+    &-side-back{
+        .center-text{
+            font-size: 4rem;
+            font-weight: 500;
+            color: white;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .btn-white{
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+    }
+}
+
+//-----------REVIEWS PAGE-----------------------
+
+.reviews{
+    h2{
+        font-size: 5rem;
+    }
+    .review{
+        &-2{
+            .review-img-text{
+                color: white;
+            }
+        }
+    }
+}
+//----------------BOOK PAGE-----------------------------
+
+.book{
+    .head-book{
+        position: absolute;
+        left: 5%;
+        font-size: 4rem;
+        color: $color-primary;
+    }
+    &-form{
+        font-size: 1.8rem;
+        margin-top: 3rem;
+
+        &-input::-webkit-input-placeholder{
+            font-size: 1.8rem;
+            color: black;
+        }
+
+        &-input{
+            font-size: 1.6rem;
+        }
+    }
+}
+
+//--------------NAV------------
+
+.nav{
+    transition: all .3s ease-in;
+    &-text{
+        display: none;
+        li{
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        .nav-link{
+            
+            opacity: 0;
+            visibility: hidden;
+            transition: all .3s ease-in;
+            text-decoration: none;
+            color: white;
+            font-size: 4rem;
+            font-weight: 600;
+            padding: .5rem 1rem;
+            &,
+            &:visited,
+            &:link{
+                display: inline-block;
+                background-image: linear-gradient(120deg,transparent 0%,transparent 50%,white 50%);
+                background-size: 230%;
+            }
+
+            &:hover,
+            &:active{
+                background-position: 100%;
+                color: $color-lightgreen;
+            }
+        }
+    }
+}
+
+//------------POPUP--------------------------
+
+.popup{
+    &-text{
+        font-weight: 200;
+        &-head{
+            font-size: 3rem;
+            color: $color-primary;
+        }
+        &-main{
+            font-size: 1.6rem;
+        }
+    }
+}

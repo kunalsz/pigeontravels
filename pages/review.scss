@@ -1,0 +1,191 @@
+/*
+.reviews{
+    position: relative;
+    height: 95vh;
+
+    .back-video{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        opacity: .6;
+        overflow: hidden;
+
+        &-content{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    // TO CENTER EVERYTHING
+    .center-review{
+        @include fullCenter;
+        @include clearfix;
+    }
+    //EACH REVIEW
+    .review{
+        box-shadow: 3px 5px 8px $def-shadow;
+        position: relative;
+        @include clearfix;
+        height: 20rem;
+        width: 70vw;
+        background-color: rgba($color-grey,.7);
+        margin-bottom: 3rem;
+        transform: skewX(-5deg);
+
+
+        //MIXIN
+        @include response(smalldisplay1){
+            height: 18rem;
+        }
+
+        &-text{
+            margin-top: -4.5rem;
+            width: 90%;
+        }
+        //TO UNSKEW THE CONTENT
+        .unskew{
+            position: absolute;
+            transform: skewX(5deg);
+            top: 30%;
+            @include clearfix;
+
+        }
+        //THE FIG
+        &-fig{
+            position: relative;
+            width: 8rem;
+            height: 8rem;
+            float: left;
+            shape-outside: circle(50% at 50% 50%);
+            
+            &-img{
+                width: 10rem;
+                height: 10rem;
+                clip-path: circle(50% at 50% 50%);
+                transition: all .3s ease-in;
+            }
+
+            &-text{
+                @include fullCenter;
+                left: 30%;
+                top: 40%;
+                transform: translateY(4rem);
+                opacity: 0;
+                transition: all .3s ease-in;
+            }
+        }
+
+
+        //HOVERS
+        &:hover .review-fig-text{
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        &:hover .review-fig-img{
+            transform: scale(.8);
+            filter: blur(4px);
+        }
+    }
+}
+*/ 
+
+.reviews{
+    position: relative;
+    padding: 12rem 0;
+    .back-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        opacity: .15;
+        overflow: hidden;
+    
+        video{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}
+.review {
+    width: 75%;
+    margin: 0 auto;
+    box-shadow: 0 3rem 6rem rgba($color-grey, .1);
+    background-color: rgba(white, .6);
+    border-radius: 3px;
+    padding: 6rem;
+    padding-left: 9rem;
+    font-size: 1.6rem;
+    transform: skewX(-12deg);
+    margin-bottom: 3rem;
+
+    
+
+    &-img{
+        width: 15rem;
+        height: 15rem;
+        float: left;
+        transform: translateX(-3rem) skewX(12deg) translateY(-2.5rem);
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+
+        @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+            -webkit-clip-path: circle(50% at 50% 50%);
+            clip-path: circle(50% at 50% 50%);
+            -webkit-shape-outside: circle(50% at 50% 50%);
+            shape-outside: circle(50% at 50% 50%);
+            border-radius: none;
+        }
+
+        
+    }
+
+    &-img-main {
+        height: 100%;
+        transform: translateX(-4rem);
+        backface-visibility: hidden;
+        transition: all .5s;
+    }
+
+    &-text {
+        transform: skewX(12deg);
+
+    }
+
+    &-img-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 20%);
+        color: black;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        text-align: center;
+        opacity: 0;
+        transition: all .5s;
+        backface-visibility: hidden;
+    }
+
+    
+    &:hover &-img-text{
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    &:hover .review-img-main{
+        filter: blur(4px);
+    }
+
+    &-2{
+        .review-img-main{
+            transform: translateX(1rem) scale(1.3);
+        }
+    }
+}

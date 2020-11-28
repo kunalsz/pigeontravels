@@ -1,0 +1,21 @@
+.row{
+    @include clearfix;
+    .col-1-2{
+        @include clearfix;
+        height: 100%;
+        float: left;
+        width: calc(((100%)-#{$col-space})/2);
+    }
+
+    .col-1-3{
+        @include clearfix;
+
+        height: 100%;
+        float: left;
+        width: calc(((90%)-#{$col-space})/3);
+
+        margin-left: 3rem;
+
+    }
+
+}

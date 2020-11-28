@@ -1,0 +1,28 @@
+// EVERYTHING IS IMPORTED HERE
+
+@import './abstract/variables.scss';
+@import './abstract/variables.scss';
+@import './abstract/mixins.scss';
+@import './abstract/utilities.scss';
+
+@import './base/body.scss';
+@import './base/typo.scss';  
+
+@import './abstract/colomns.scss';
+@import './abstract/mixins.scss';
+@import './abstract/variables.scss';
+
+
+@import './components/animations.scss';
+@import './components/btns.scss';   
+@import './components/card.scss';  
+@import './components/nav.scss';
+@import './components/popup.scss';
+
+@import './pages/front.scss';  
+@import './pages/about.scss';
+@import './pages/services.scss';
+@import './pages/tours.scss';
+@import './pages/review.scss';
+@import './pages/book.scss';
+@import './pages/foot.scss';

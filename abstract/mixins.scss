@@ -1,0 +1,43 @@
+@mixin fullCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+@mixin clearfix{
+    &::after{
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+
+//MEDIA QUERIES 
+
+@mixin response($break) {
+    @if $break == smalldisplay1 {
+        @media only screen and  (max-width:1050px) {
+            @content;
+        }
+    }
+    
+    @if $break == smalldisplay2 {
+        @media only screen and  (max-width:1000px) {
+            @content;
+        }
+    }
+
+    @if $break == smalldisplay3 {
+        @media only screen and  (max-width:975px) {
+            @content;
+        }
+    }
+
+    @if $break == smalldisplay4 {
+        @media only screen and  (max-width:875px) {
+            @content;
+        }
+    }
+}

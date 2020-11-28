@@ -1,0 +1,62 @@
+.services{
+    position: relative;
+    margin-top: -15rem;
+    background-image:  $main-gradient,url('../assets/back-3.jpg');
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+
+    &-icon{
+        padding-top: 4rem;
+        width: 6rem;
+    }
+
+    .head-services{
+        padding-top: 18rem;
+
+        //MEDIA
+        @include response(smalldisplay3){
+            padding-top: 15rem;
+        }
+    }
+
+    .row{
+
+        padding-bottom: 20rem;
+
+        .col-1-3{
+            box-shadow: 4px 8px 10px $def-shadow;
+            display: table-cell;
+            background-color: $color-grey ;
+            transition: all .2s ease-out;
+
+
+            //MIXIN
+            @include response(smalldisplay2){
+                &:not(:last-child){
+                    margin-left: 2rem;
+                }
+            }
+
+            .center-text{
+                @include response(smalldisplay2){
+                    padding: 0;
+                }
+            }
+
+            &:hover{
+                transform: translateY(-1rem);
+            }
+        }
+    }
+
+    .def-para{
+        padding-bottom: 3rem;
+    }
+
+    .btn-white{
+        position: absolute;
+        bottom: 5%;
+        transform: translate(-50%,-50%);
+        margin-bottom: 5rem;
+    }
+}

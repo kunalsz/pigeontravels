@@ -1,0 +1,47 @@
+.front{
+    position: relative;
+    height: 95vh;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+    background-image: $main-gradient,url('../assets/back-1.jpg');
+    background-size: cover;
+    z-index: 10;
+
+    .logo{
+        position: absolute; 
+        width: 6rem;
+        top: 2rem;
+        left: 2rem;
+    }  
+    //BECAUSE IT WAS CAUSING SOME ERRORS 
+    .contain{
+        .btn-white{
+            animation: moveUp 1s ease-in;
+            &:hover{
+                transform: translateY(-.6rem);
+            }
+            &:active{
+                transform: translateY(.3rem);
+            }
+        }
+
+        //MEDIA
+        .headings{
+            .heading-big{
+                @include response(smalldisplay3){
+                    font-size: 6rem;
+                }
+                @include response(smalldisplay4){
+                    font-size: 5rem;
+                }
+            }
+            .heading-small{
+                @include response(smalldisplay3){
+                    font-size: 2.5rem;
+                }
+                @include response(smalldisplay4){
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+}

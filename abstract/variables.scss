@@ -1,0 +1,15 @@
+$color-primary : #0a80ee;
+$color-secondary : #6dcccc;
+$color-grey :rgb(229, 226, 226);
+$color-grey-light: rgb(241, 238, 238);
+$color-orange : #ff5200;
+$color-yellow : #ffd31d;
+$color-lightgreen : #21bf73;
+$color-darkgreen : #79d70f;
+$def-shadow : rgba(black,.6);
+
+$col-space : 5rem;
+
+$main-gradient : linear-gradient(to right bottom,rgba($color-primary,.75),rgba($color-secondary,.75));
+$secondary-gradient : linear-gradient(to right bottom,rgba($color-orange,.75),rgba($color-yellow,.75));
+$tertiary-gradient : linear-gradient(to right bottom,rgba($color-lightgreen,.75),rgba($color-darkgreen,.75))
